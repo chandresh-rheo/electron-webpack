@@ -20,9 +20,9 @@ function build(configFile: string) {
   const extraWebpackArgs = sliceIndex < args.length ? args.slice(sliceIndex) : []
   // remove extra args
   args.length = 2
-  if (!extraWebpackArgs.some(it => it.includes("--env.production"))) {
-    args.push("--env.production")
-  }
+  // if (!extraWebpackArgs.some(it => it.includes("--env.production"))) {
+  //   args.push("--env.production")
+  // }
   args.push("--progress")
   args.push(...extraWebpackArgs)
   args.push("--config", path.join(__dirname, "..", `webpack.${configFile}.config.js`))
